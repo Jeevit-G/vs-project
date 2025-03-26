@@ -12,15 +12,15 @@ stop = 'final' # Used to end the code
 DS = input("Input descent speed in m/s: ")
 while DS != stop:
     try:
-        if DS.isnumeric(): #Checks if the input is a numeric
+        if DS.replace(".", "").isnumeric(): #Checks if the input is a numeric
             speed_list.append(float(DS)) #Putting user input into empty list
 
         
         else:
-            print('Invalid descent speed!') # If not numeric it prints this and asks to try again
+            print('Error, invalid input.') # If not numeric it prints this and asks to try again
         DS = input("Input descent speed in m/s: ")
     except ValueError:
-        print('Invalid descent speed!')
+        print('Error, invalid input.')
         
 #This block of program prints out the results
 
