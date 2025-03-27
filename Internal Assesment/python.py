@@ -7,24 +7,24 @@ speed_list = [] # Creates an empty list
 high_list = []
 safespeed = 10
 stop = 'final' # Used to end the code
- 
+
 #Asking for Input
-DS = input("Input descent speed in m/s: ")
-while DS != stop:
+word = input("Input descent speed in m/s: ").lower()
+
+while word != stop:
     try:
-        if DS.replace(".", "").isnumeric(): #Checks if the input is a numeric if float is replaces the decimal with blank
-            speed_list.append(float(DS)) #Putting user input into empty list and floats it
-         
+        if word.replace(".", "").isnumeric(): #Checks if the input is a numeric if float is replaces the decimal with blank
+            speed_list.append(float(word)) #Putting user input into empty list and floats it
         else:
             print('Error, invalid input.') # If not numeric it prints this and asks to try again
-        DS = input("Input descent speed in m/s: ")
+        word = input("Input descent speed in m/s: ").lower()
     except ValueError:
         print('Error, invalid input.') # If error it prints
  
  #This block of program prints out the results
  
 for item in speed_list:
-    if item > 10:
+    if item > safespeed:
         speed = speed + 1
         high_list.append(float(item))
  
